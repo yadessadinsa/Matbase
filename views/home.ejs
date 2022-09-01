@@ -1,0 +1,60 @@
+
+ 
+         <% include partial1.ejs %>
+  <body>
+ <section id="boxes">
+    <% if(locals.message){ %>
+      <div class = "alert alert-success" role = "alert">
+            <%=message.success%>
+      </div>
+      <% } %>  
+    
+      <div class="box">
+  
+            <img src="Pic/img6.jpg" alt="">
+
+      </div>
+
+</section>
+
+<section id="boxes1">
+
+      <div class="box1">
+            <img src="Pic/0022.jpg" alt ="" >
+            <img src="Pic/0033.jpg" alt ="">
+            <img src="Pic/0044.jpg" alt ="">
+            <img src="Pic/0011.jpg" alt ="">
+
+      </div>
+</section>
+      <div class = "container0">
+            <h6 align = "right">Developed by Yadessa Dinsa (MSc, ME, REng), January 2018. </h6>
+
+      </div>
+
+
+
+ <script>
+            var logtag = document.querySelector("#log")
+            var regtag = document.querySelector("#reg")
+            var homtag = document.querySelector("#hom")
+            var dattag = document.querySelector("#dat")
+            var instag = document.querySelector("#ins")
+            var abttag = document.querySelector("#abt")
+            var loogtag = document.querySelector("#loog")
+      
+      
+            logtag.classList.remove("selected");
+            regtag.classList.remove("selected");
+            homtag.classList.add("selected");
+            dattag.classList.remove("selected");
+            instag.classList.remove("selected");
+            abttag.classList.remove("selected");
+            loogtag.classList.remove("selected");	
+      </script>
+
+<script src = "js/jquery.min.js"></script>;
+<script src = "javascripts/bootstrap.js"></script>
+
+</body>
+</html>

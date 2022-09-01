@@ -1,0 +1,58 @@
+
+         <% include partial.ejs %>
+<div class="container5">
+<form action = "/register" method = "Post">
+<h3 class = "h33" >Please register here!</h3>
+<label for="name">
+Name<br>
+<input id = "name" type="text" name ="name" placeholder="Enter name" ><br>
+</label> <br>
+<label for="name">
+Email<br>
+<input id = "email" type="email" name ="email" placeholder="Enter Email" ><br>
+</label> <br>
+<label for="username">
+Username<br>
+<input class ="username loguser" type="text" name ="username" placeholder="Enter Username" ><br>
+</label> <br>
+<label for="password">
+Password<br>
+<input  class = "password logpass" type="password" name ="password" placeholder="Enter password" ><br>
+</label> <br>
+<label for="password2">
+Confirm password<br>
+<input id = "password2" type="password" name ="password2" placeholder="confirm password" ><br>
+</label><br>
+<label for="password2">
+Project name<br>
+<input id = "projname" type="text" name ="Prname" placeholder="Project name" ><br>
+</label>
+
+
+<input type="submit" class="button_1 reg" type = "submit">
+</form>
+</div>
+
+<script>
+        var logtag = document.querySelector("#log")
+        var regtag = document.querySelector("#reg")
+        var homtag = document.querySelector("#hom")
+        var dattag = document.querySelector("#dat")
+        var instag = document.querySelector("#ins")
+        var abttag = document.querySelector("#abt")
+        var loogtag = document.querySelector("#loog")
+    
+    
+        logtag.classList.remove("selected");
+        regtag.classList.add("selected");
+        homtag.classList.remove("selected");
+        dattag.classList.remove("selected");
+        instag.classList.remove("selected");
+        abttag.classList.remove("selected");
+        loogtag.classList.remove("selected");	
+    </script>
+
+<script src = "js/jquery.min.js"></script>;
+<script src = "javascripts/bootstrap.js"></script>
+
+<%include footer.ejs%>

@@ -1,0 +1,51 @@
+
+ 
+         <% include partial.ejs %>
+
+    
+    <body>
+     
+<div class="container6">
+<form action = "/login" method = "Post" >
+<h3 class = "h33" >Please login here!</h3>
+
+<label for="username">
+Username <br>
+<input id ="username" type="text" name ="username" placeholder="Enter Username" ><br>
+</label><br>
+<label for="password">
+Password <br>
+<input  id = "password" type="password" name ="password" placeholder="Enter password" ><br>
+</label><br>
+        
+ 		
+<input type="submit" class="button_1" type = "submit">
+</form>
+</div>
+
+<script>
+        var logtag = document.querySelector("#log")
+        var regtag = document.querySelector("#reg")
+        var homtag = document.querySelector("#hom")
+        var dattag = document.querySelector("#dat")
+        var instag = document.querySelector("#ins")
+        var abttag = document.querySelector("#abt")
+        var loogtag = document.querySelector("#loog")
+    
+    
+        logtag.classList.add("selected");
+        regtag.classList.remove("selected");
+        homtag.classList.remove("selected");
+        dattag.classList.remove("selected");
+        instag.classList.remove("selected");
+        abttag.classList.remove("selected");
+        loogtag.classList.remove("selected");	
+    </script>
+
+<script src = "js/jquery.min.js"></script>;
+<script src = "javascripts/bootstrap.js"></script>
+
+</body>
+
+</html>
+<% include footer.ejs %>

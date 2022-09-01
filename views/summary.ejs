@@ -1,0 +1,190 @@
+
+<% include partial.ejs %>
+<div id = "container">
+	
+
+</div>
+ <div class = "Data1">
+
+ 	<form action="/addata" method="Post">
+ 		<input id = "station" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
+ 		<input id = "station" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
+		 <label for = "filltype">Fill type:</label>
+ 		<select id = "filltype" name="filltype" required>
+ 			<option value = "G3">G3</option>
+ 			<option Value = "G7">G7</option>
+ 			<option Value = "G15">G15</option>
+ 			<option Value = "Sub base">Sub base</option>
+ 			<option Value = "Base course">Base course</option>
+ 		</select>
+ 		<label for = "layerno:">Layer no.:</label>
+ 		<select id = "layerno." name = "layerno">
+ 			<option value = "1">First</option>
+ 			<option value = "2">Second</option>
+ 			<option value = "3">Third</option>
+ 			<option value = "4">Fourth</option>
+ 			<option value = "5">Fifth</option>
+ 		</select>
+
+ 		<label for = "thickness">Thickness:</label>
+ 		<input id = "thickness" type="text" name = "thickness" placeholder = "thickness" required pattern=".{2,3}" required title="Please the thickness should be two digits minimum or three digits maximum">
+ 		<label for = "compaction">Compaction:</label>
+		 <input id = "compaction" type="text" name="compaction" placeholder = "compaction" required pattern=".{2,3}" required title="Please the compaction percentage should not exceed 100%">
+		
+		 <label for = "road width">Road width:</label>
+		 <input id = "road width" type="number" name="Rwidth" placeholder = "Road width" required pattern=".{2}" required title="Please insert correct road width!!">
+		
+		 <label align = "center" for = "comment"></label><br> 
+ 		<textarea id = "comment" cols = "35" rows = "1" name="comment" placeholder = "Insert your comment!!" ></textarea>
+		
+		 <label for = "picture">Picture:</label>
+ 		 <input id = "picture" type="text" name="picture" placeholder = "Picture" >
+		 <label for = "borrow pit name">Borrow pit name:</label>
+		 <input id = "borrow pit name" type="text" name="BPname" placeholder = "borrow pit name" required title="Borrow pit name goes here!!!">
+		 <label for = "shrinkage">Shrinkage:</label>
+		 <input id = "shrinkage" type="number" name="shrnk" placeholder = "Shrinkage factor" required pattern=".{2}" required title="Please insert shrinkage factor!!!">
+
+		 
+		 <label for = "approval">Signature:</label>
+ 		<select id = "approval" name = "approval">
+ 			<option value = "Approved">Approved</option>
+ 			<option value = "Not Approved">Not Approved</option>
+ 
+ 		</select>
+
+ 		<label for = "supervisor">Supervisor:</label>
+		 <input id = "supervisor" type="text" name="supervisor" placeholder = "supervisor" required title="Please insert Supervisor name">
+		 		 
+		 <button type = "submit" class = "insert">submit</button>
+		
+	 </form>
+	</div>
+	<div class = "database1">
+	<form action="/findata" method="Post">
+		
+		<input name = "stationF" type = "text" id = "station" placeholder ="Insert station">
+					
+		<button type = "submit">Retrieve</button>
+	</form>
+	</div>
+	<div class = "database2">
+    <form action="/findfilltype" method="Post">
+		<select id = "layerno." name = "filltype" placeholder = "filltype">
+			<option value="">Select fill type</option>
+			<option value = "Rock fill">Rock fill</option>
+ 			<option value = "G3">G3</option>
+ 			<option value = "G7">G7</option>
+ 			<option value = "G15">G15</option>
+ 			<option value = "sub base">Sub base</option>
+			<option value = "base course">Base course</option>
+		 </select>			
+		<button class = "del" type = "submit" >Status</button>
+	</form>
+	</div>
+	<div class = "database3">
+	
+	<form action="/deletedata" method="Post">
+		<input name = "stationF" type = "text" id = "station" placeholder ="Insert station">
+					
+		<button class = "del" type = "submit" >Remove</button>
+	</form>
+	
+	
+	</div>
+	 <div class = "database4">
+   <form action = "/datas" method = "get">
+   <button type = "submit">X-section</button>
+	</form>
+	</div>
+   
+	<div class = "database5">
+		<form action = "/Mapfilltype" method = "post">
+			<select name="filltype" id="">
+				<option value="">Select fill type</option>
+				<option value="Rockfill">Rock fill</option>
+				<option value="G3">G-3</option>
+				<option value="G7">G-7</option>
+				<option value="G15">G-15</option>
+				<option value="subbase">Sub base</option>
+				<option value="basecourse">Base course</option>
+				
+		</select>
+			<button type = "submit">Map</button>
+		 </form>
+		 </div>
+	 
+	<div class = "database7">
+		<form action = "/datas" method = "get">
+		<button type = "submit">Profile</button>
+		 </form>
+		 </div>
+	
+<div class = "database">
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"Rock fill"})%>------Layerno:--<%=data.layerno.sort({layerno:-1})%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"G3"})%>------Layerno:--<%=data.layerno%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"G7"})%>------Layerno:--<%=data.layerno%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"G15"})%>------Layerno:--<%=data.layerno%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"Sub base"})%>------Layerno:--<%=data.layerno%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+<ol>
+<% summary.forEach(function(data){ %>
+	___________________________________________________________________________________________________________________________________________
+<li> <strong>Station from:</strong><%=data.stationF%>--<strong>to:</strong><%=data.stationT%>------Filltype:--<%=data.find({filltype:"Base course"})%>------Layerno:--<%=data.layerno%>------Thickness:--<%=data.thickness%>------Compaction:--<%=data.compaction%>------<%=data.approval%>------By:--<%=data.supervisor%>------Date:--<%=data.Date%></li>
+
+<% }) %>
+</ol>
+
+
+</div>
+<script>
+		var logtag = document.querySelector("#log")
+		var regtag = document.querySelector("#reg")
+		var homtag = document.querySelector("#hom")
+		var dattag = document.querySelector("#dat")
+		var instag = document.querySelector("#ins")
+		var abttag = document.querySelector("#abt")
+		var loogtag = document.querySelector("#loog")
+	
+	
+		logtag.classList.remove("selected");
+		regtag.classList.remove("selected");
+		homtag.classList.remove("selected");
+		dattag.classList.add("selected");
+		instag.classList.remove("selected");
+		abttag.classList.remove("selected");
+		loogtag.classList.remove("selected");	
+	</script>
+	<script src = "js/jquery.min.js"></script>;
+    <script src = "javascripts/bootstrap.js"></script>
+	
+</body>
+</html>
