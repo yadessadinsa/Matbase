@@ -10,7 +10,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index.js');
-var users = require('./routes/users.js');
+var users  = require('./routes/users.js');
 var session = require('express-session');
 var passport = require('passport');
 var expressValidator = require('express-validator');
@@ -21,46 +21,55 @@ var upload = multer({ dest: './uploads' })
 var flash = require('connect-flash');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-const { createCipheriv } = require('crypto');
-
-
-// assuming you put views folder in the same directory as app.js
-app.set('views', __dirname + '/views')
-//app.engine('ejs', ejs.renderFile);
-app.set('view engine', 'ejs');
+var morgan = require('morgan');
+const { Server } = require('http');
 
 //var MONGODB_URI = https://downloads.mongodb.com/compass/mongosh-1.0.0-win32-x64.zip
 
-const connection = process.env.MONGODB_URI || 'mongodb://localhost/Data_app'
-mongoose.connect(connection, function (err) {
-    if (err) {
-        console.log('Error, connection failed to', connection);
-    }
-    else {
-        console.log('Connection is made to', connection);
-    }
+//var connection = process.env.MONGODB_URI || 'mongodb://localhost/Data_app'
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Data_app', {
+    useNewParser: true,
+    useUnifiedTopology: true
 });
+   
+mongoose.connection.on('open', function (ref) {
+    console.log('Connected to mongo server.');
+
+    mongoose.connection.db.listCollections().toArray(function (err, names) {
+        console.log(names);
+    });
+})
 
 
+/*mongoose.connection.on({
+    console.log('mongoose is connected');
+});
+*/
 
-/*const uri = mongodb+srv://Yadessa:117022@cluster0.q6n7u.mongodb.net/?retryWrites=true&w=majority
-
-
-     mongoose.connect(uri)({
-        useNewUrlParser:true;
-        useUnifiedTopology:true;
-        useFindAndModify:false;
-        useCreateIndex:true
-     }).then(()==>{
-        console.log('Connection is made to MongoDB');
-     }).catch(error)({
-        console.error(eror);
-     });
-        
-  */
+/* function(err){
+       if(err){
+             console.log('Error, connection failed to',connection);
+           }
+    else{
+              console.log('Connection is made to', connection );
+        }
+    });
+*/
 
 const PORT = process.env.PORT || 8080
-
+/* VIEW ENGINE SETUP
+-------------------------------------*/
+app.set('views',path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+// uncomment afer placing your favicon in /;
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(logger,'dev');
+// app.use(bodyParser.jason());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser('secret'));
+app.use(express.static(__dirname + "/public"));
+/* SESSION HANDLER
+---------------------------------------*/
 app.use(require('express-session')({
     secret: 'secret',
     saveUninitialized: false,
@@ -72,7 +81,7 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
-/*app.use(expressValidator({
+app.use(expressValidator({
     errFormatter: function (param, msg, value) {
         var namespace = param.split('.')
             , root = namespace.shift()
@@ -88,17 +97,16 @@ app.use(passport.session());
         };
     }
 }));
-*/
 app.use(flash());
-app.use(function (req, res, next) {
-    res.locals.succes_messages = req.flash('succes_messages');
-    res.locals.error_messages = req.flash('error_messages');
-    next();
-});
-app.use('/', routes);
-app.use('/users', users);
-app.use(users);
-app.get('*', function (req, res, next) {
+ app.use(function(req,res,next){
+   res.locals.succes_messages = req.flash('succes_messages');
+   res.locals.error_messages = req.flash('error_messages');
+   next();
+ });
+ app.use('/', routes);
+ app.use('/users', users);
+ app.use(users);
+ app.get('*', function( req, res, next){
     res.locals.user = req.user || null;
     next();
 });
