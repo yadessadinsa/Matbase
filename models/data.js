@@ -33,7 +33,7 @@ var dataSchema = new mongoose.Schema({
     MatCol: "string",
     MatLyr: "string",
     RemQnt: "number",
-    PrjNm: "string"
+    PrjNm: "number"
 })
 
 

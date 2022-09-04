@@ -41,21 +41,6 @@ mongoose.connection.on('open', function (ref) {
 })
 
 
-/*mongoose.connection.on({
-    console.log('mongoose is connected');
-});
-*/
-
-/* function(err){
-       if(err){
-             console.log('Error, connection failed to',connection);
-           }
-    else{
-              console.log('Connection is made to', connection );
-        }
-    });
-*/
-
 const PORT = process.env.PORT || 8080
 /* VIEW ENGINE SETUP
 -------------------------------------*/
