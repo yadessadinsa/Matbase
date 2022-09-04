@@ -2,6 +2,7 @@
 /* MATBASE PROGRAMME SERVER EXPRESS + NODEJS + MONGODB
  APP DEPENDENCY
 ------------------------------------------------------*/
+require('dotenv').config({path:'./conrig.env'});
 var express = require('express');
 var app = express();
 var path = require('path');
