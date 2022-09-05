@@ -47,5 +47,6 @@
   "bugs": {
     "url": "https://github.com/Yadessa/MatbaseYD/issues"
   },
-  "homepage": "https://github.com/Yadessa/MatbaseYD#readme"
+  "homepage": "https://github.com/Yadessa/MatbaseYD#readme",
+  "devDependencies": {}
 }
