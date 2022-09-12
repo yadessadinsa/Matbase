@@ -11,7 +11,7 @@ var data = require('../models/data.js');
 
 var Instdata = require('../models/Instdata.js');
 var dataStatus = require('../controller/dataStatus.js')
-
+var flash = require('connect-flash');
 /* ABOUT ROUTER
 ------------------------------------------------*/
 router.get('/about', function (req, res, next) {
@@ -316,8 +316,8 @@ router.post("/addata", function (req, res) {
         if (err) {
             console.log("You have an error");
             console.log(err);
-        //} else if (req.body.PrjNm === ""){
-          //  alert("This activity has no Plan! Please enter its Plan.");
+        } else if (req.body.PrjNm === ""){
+           conslole.log("This activity has no Plan! Please enter its Plan.");
         } else {
             console.log('A new data is added to the database');
             res.redirect("/datas")

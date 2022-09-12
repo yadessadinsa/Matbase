@@ -26,15 +26,17 @@ var morgan = require('morgan');
 const { Server } = require('http');
 
 //var MONGODB_URI = https://downloads.mongodb.com/compass/mongosh-1.0.0-win32-x64.zip
+mongodb://localhost/Data_app' ||
 
-//var connection = process.env.MONGODB_URI || 'mongodb://localhost/Data_app'
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Data_app', {
+var connection =  process.env.MONGODB_URI
+
+mongoose.connect( connection  , {
     useNewParser: true,
     useUnifiedTopology: true
 });
    
 mongoose.connection.on('open', function (ref) {
-    console.log('Connected to mongo server.');
+    console.log('Connected to mongo server.' + connection);
 
     mongoose.connection.db.listCollections().toArray(function (err, names) {
         console.log(names);

@@ -35,6 +35,8 @@ function PrChange(obj) {
     obj.checked = true;
 }
 
+PrChange()
+
 var checkedValue = $('.project:checked').val();
 var checkedValue = null;
 var inputElements = document.getElementsByClassName('project');
@@ -48,7 +50,7 @@ for(var i=0; inputElements[i]; ++i){
 
 </script>
 
-        <input id = "Project" type="hidden" name="PrjNm" placeholder = "" required pattern="" required title="">
+        
  		<input id = "station" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
  		<input class="stationT" id = "station" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
 		 
