@@ -32,11 +32,12 @@ var connection =  process.env.MONGODB_URI
 
 mongoose.connect( connection  , {
     useNewParser: true,
+    useCreateIndex: true,
     useUnifiedTopology: true
 });
    
 mongoose.connection.on('open', function (ref) {
-    console.log('Connected to mongo server.' + connection);
+    console.log('Connected to database server.' + connection);
 
     mongoose.connection.db.listCollections().toArray(function (err, names) {
         console.log(names);
