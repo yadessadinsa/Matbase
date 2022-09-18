@@ -39,11 +39,13 @@
     "passport-local-mongoose": "^5.0.0",
     "sass": "^1.3.2",
     "serve-favicon": "^2.4.5"
-  },
+  },/
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yadessa/MatbaseYD.git"
+    "url": "git+https://github.com/yadessadinsa/matbase.git"
+
+  
   },
   "bugs": {
     "url": "https://github.com/Yadessa/MatbaseYD/issues"

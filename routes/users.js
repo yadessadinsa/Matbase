@@ -92,7 +92,7 @@ function ensureAuthenticated(req, res, next) {
 router.post('/login', passport.authenticate('local', {failureRedirect: '/login' ,failureFlash:'Invalid username pssword or project name'}),
         function(req,res){
             req.flash('success','You are now logged in!');
-            res.render('home');
+            res.render('intro');
         }) 
         passport.use(new LocalStrategy(User.authenticate()));
         passport.serializeUser(User.serializeUser());
