@@ -3,10 +3,21 @@
          <% include partial.ejs %>
 
     
-         <body>
+         <body id = 'par' onload = 'opendatas()'>
      <section>  
      
-              
+    <script>
+
+         
+      setTimeout( function opendatas(){
+
+            window.location = 'http://localhost:8080/datas';
+            
+        },4500)
+
+       
+    </script>
+
      <div class="container9">
          
          <span class="highlight2">Welcome to </span><span class="highlight1">MAT</span><span class = "highlight5">base</span><Span class = "highlight4"></Span> <span class = "highlight3">v-17</span>
@@ -20,13 +31,6 @@
      
          <h5>E-mail:yadessadinsa@gmail.com, Phone:+25678739148 or +251921945294.</h5>
      
-         <a id = "loog" href="/datas">START</a>
-        <script>
-     
-         document.getElementById('loog') = 'red'
-        </script>
-         
-                   
          
      
         
