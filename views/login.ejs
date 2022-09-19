@@ -17,11 +17,26 @@ Username <br>
 Password <br>
 <input  id = "password" type="password" name ="password" placeholder="Enter password" ><br>
 </label><br>
-        
- 		
+<input type="checkbox" onclick="Toggle()">
+<b>Show Password</b>
+     
 <input type="submit" class="button_1" type = "submit">
 </form>
 </div>
+
+
+<script>
+// Change the type of input to password or text
+ function Toggle() {
+     var temp = document.getElementById("password");
+     if (temp.type === "password") {
+         temp.type = "text";
+     }
+     else {
+         temp.type = "password";
+     }
+ }
+</script>
 
 <script>
         var logtag = document.querySelector("#log")
