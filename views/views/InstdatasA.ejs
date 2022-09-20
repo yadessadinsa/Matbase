@@ -1,0 +1,162 @@
+
+ 
+         <% include partial.ejs %>
+         <div id = "container">
+        </div>
+         <div class = "Data1">
+        
+             <form action="/addInstdatas" method="Post">
+                <label for = "Prname">Project name:</label>
+                <select id = "" name="Prname" required>
+                   <option value = "RUKUNGIRI-KIHIHI-ISHASHA/KANUNGU">Rukungiri</option> 
+                   <option value = ""></option>
+                    <option Value = ""></option>
+                    
+                </select>
+                <label for = "title">Title:</label>
+                 <input id = "title" type="text" name = "title" placeholder = "title" >
+                 <label for = "formname">Form No.:</label>
+                 <input id = "formname" type="text" name = "formname" placeholder = "Form No." >
+
+                 <label for = "station">From:</label>
+                <input id = "stationF" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
+                <label class="stationTO" for = "station">To:</label>
+                <input id = "stationA" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
+                 
+        
+                                  
+                         
+                 <label for = "signiture">Sign here:</label>
+                  <input id = "" type="file" name="sign" required >
+                 
+                 
+                 
+                 <label for = "engineer">Engineer:</label>
+                 <input id = "engineer" type="text" name="engname" placeholder = "Engineer" required title="Please insert Supervisor name"><br>
+                 <!-- <section id="commentSec"> -->
+                 <textarea id = "comment1" name="instr" placeholder = "Forword your Eng. Instruction!!" ></textarea> 		 
+                <!-- </section> -->
+                <button type="submit">submit</button>
+                </form>
+                </div>
+                <div class = "database8"> 
+                <form  action="/findInstdatas" method="post">
+                
+                    <input name = "stationF" type = "text" class = "" placeholder ="From station">
+                    <input name = "stationT" type = "text" class = "xs-st" placeholder ="To station">
+                                
+                    <button class = "" type = "submit">Retrieve</button>
+                </form>
+            </div>
+            <div class = "database11">
+                   <form action="/deleteInstdatas" method="post">
+                
+                   <input name = "formname" type = "text" class = "" placeholder ="Insert Form No.">
+                                                   
+                      <button class = "" type = "submit">Remove</button>
+                   </form>
+            </div>     
+                    
+                
+                
+            </div>
+            
+            
+            
+            
+    <div class = "instTabel">
+        <% Instdatas.forEach(function(data){ %>
+            <hr>
+            <table class="table table-hover" id = "" border="">
+                <thead>
+                <tr>
+                    <th>
+                        <img src = "/pic/006.jpg" width = "170" height ="170">
+                    </th>
+                    <th>
+                            <div class = ""><h1><b>SMEC ENGINEERING CONSULTANT</b></h1></div><br>
+                            <div class = ""><b>PROJECT:</b> <%=data.Prname%></div>
+    
+                    </th>
+                      <th>
+                          <div id = "form"><h2>Form no: <%=data.formname%> <span style="margin-left: 11px;"></span> Date: <%=data.date%> </h2></div>
+                      </th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <div style="font-size: 16px; margin: 0 auto; width: 50%;"><b>ENGINEER'S INSTRUCTION</b></div><br>
+                        
+                    </td>
+    
+                    <td>
+                      <h2>From: <%=data.stationF%><span style="margin-left: 24px;"></span>To: <%=data.stationT%></h2> 
+    
+                    </td>
+    
+                    </table>
+                
+                
+                    <table class="table table-hover">
+                        <tr>
+                        <td class =""><B>FROM: CONSULTANT REPRESENTATIVE</B></td>
+                        </tr>
+                 </table>
+                 <table class="table table-hover" style="height: 75%">  
+                    <tr >
+                        <td><%=data.instr%></td>
+                    </tr>
+                </table>
+
+                 
+                 <table class="table table-hover">
+                    <td style = "display: none;">
+                        <td>Signed By: <%=data.engname%></td>
+                     </td>
+                    <td style = "display: none;">
+                        <td>Position: P/Materials Engineer</td>
+                        
+                    </td>
+
+                     </td>
+                     <td style = "display: none;">
+                            <td>Signiture:
+
+                                    <label for id ="box3">
+                                            <div id = "box3"><img src = "/Pic/<%=data.sign%>" length = "" width = ""></div>
+                                            <!-- <td><textarea name="" class="Enginst6" cols="38" rows="2">Signiture:</textarea></td> -->
+                                             </label>
+                            </td>
+                            
+                        </td>
+                     
+                 </table> 
+                 <%})%>
+        </div>
+    
+        <script>
+                var logtag = document.querySelector("#log")
+                var regtag = document.querySelector("#reg")
+                var homtag = document.querySelector("#hom")
+                var dattag = document.querySelector("#dat")
+                var instag = document.querySelector("#ins")
+                var abttag = document.querySelector("#abt")
+                var loogtag = document.querySelector("#loog")
+            
+            
+                logtag.classList.remove("selected");
+                regtag.classList.remove("selected");
+                homtag.classList.remove("selected");
+                dattag.classList.remove("selected");
+                instag.classList.add("selected");
+                abttag.classList.remove("selected");
+                loogtag.classList.remove("selected");	
+            </script>
+    
+    <script src = "js/jquery.min.js"></script>;
+    <script src = "javascripts/bootstrap.js"></script>
+    </body>
+    </html>
+

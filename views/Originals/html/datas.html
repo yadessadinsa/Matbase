@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>MATbase </title>
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<header>
+<div class="container">
+<div id = "branding">
+<h1> <span class="highlight">MAT</span>base</h1>
+</div>
+<div class = "container">
+<nav>
+<ul>
+<li class="current"><a href="home.html">Home</a></li>
+<li><a href="about">Main page</a></li>
+<li><a href="about">Data View</a></li>
+<li><a href="services">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<div id = "container">
+	<h3 align = "center">EARTH WORK DATA</h3>
+
+</div>
+ <div class = "Data1">
+
+ 	<form action="/addata" method="Post">
+ 		<label for = "station">Station:</label>
+ 		<input id = "station" type="text" name="station" placeholder = "station"  required pattern=".{2,3}" required title="Please the length should be two digits minimum or three digits maximum">
+ 		<label for = "filltype">Fill Type:</label>
+ 		<select id = "filltype" name="filltype" required>
+ 			<option value = "G3">G3</option>
+ 			<option Value = "G7">G7</option>
+ 			<option Value = "G15">G15</option>
+ 			<option Value = "Sub base">Sub base</option>
+ 			<option Value = "Base course">Base course</option>
+ 		</select>
+ 		<label for = "layerno:">Layer No.:</label>
+ 		<select id = "layerno." name = "layerno">
+ 			<option value = "1">First</option>
+ 			<option value = "2">Second</option>
+ 			<option value = "3">Third</option>
+ 			<option value = "4">Fourth</option>
+ 			<option value = "5">Fifth</option>
+ 		</select>
+
+ 		<label for = "thickness">Thickness:</label>
+ 		<input id = "thickness" type="text" name = "thickness" placeholder = "thickness" required pattern=".{2,3}" required title="Please the thickness should be two digits minimum or three digits maximum">
+ 		<label for = "compaction">Compaction:</label>
+ 		<input id = "compaction" type="text" name="compaction" placeholder = "compaction" required pattern=".{2,3}" required title="Please the compaction percentage should not exceed 100%">
+ 		<label for = "approval">Approval:</label>
+ 		<select id = "approval" name = "approval">
+ 			<option>Aproved</option>
+ 			<option>Not Approved</option>
+
+ 		</select>
+
+ 		<label for = "supervisor">Supervisor</label>
+ 		<input id = "supervisor" type="text" name="supervisor" placeholder = "supervisor" required title="Please insert Supervisor name"><br><span>---------------------------------------</span>-----------
+ 		<button type = "submit" class = "">Add in to Matbase DB</button><span>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+ 	</form>
+	<form class="" action="/findata" method="get">
+		<label for="station">Station:</label>
+		<input id = "station" type="text" name="station" placeholder = "station"  required pattern=".{2,3}" required title="Please the length should be two digits minimum or three digits maximum">
+		<button type = "submit" class = "">Retrieve data from Matbase DB</button>
+		</form>
+
+<div class = "database">
+<% datas.foreEach(function(data){ %>
+<ol>
+<li> Station:<strong><%=data.station%></strong>strong> - Filltype:<%=data.filltype%> - Layerno:<%=data.layerno%> - Thickness:<%=data.thickness%> - Compaction:<%=data.compaction%> -  Approval:<%=data.approval%> - Supervisor:<%=data.supervisor%> </li>
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+</ol>
+<% }) %>
+</div>
+
+</body>
+</html>

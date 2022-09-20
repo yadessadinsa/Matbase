@@ -1,0 +1,190 @@
+
+<% include partial.ejs %>
+<div id = "container">
+	
+
+</div>
+ <div class = "Data1">
+
+ 	<form action="/addata" method="Post">
+		<!-- <input id = "rad1" name = "Prname"  class ="PR" type="radio" value="Rukungiri-Kihihi-Ishasha/Kanungu"><label id = "radd1">R-K-I/K Project</label>
+		<input id = "rad2" name = "Prname" class ="PR" type="radio" value="Kampala City Roads"><label id = "radd2">K-C-R Project</label><br>	
+		 -->
+		<input id = "station" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
+ 		<input class="Cstation" id = "station" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
+		 <label for = "filltype">Fill type:</label>
+ 		<select id = "filltype" name="filltype" required>
+			<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+ 		</select>
+ 		<label for = "layerno:">Layer no.:</label>
+ 		<select id = "layerno." name = "layerno">
+ 			<option value = "1">First</option>
+ 			<option value = "2">Second</option>
+ 			<option value = "3">Third</option>
+ 			<option value = "4">Fourth</option>
+ 			<option value = "5">Fifth</option>
+ 		</select>
+
+ 		<label for = "thickness">Thickness:</label>
+ 		<input class="Cthickness" id = "thickness" type="text" name = "thickness" placeholder = "thickness" required pattern=".{2,3}" required title="Please the thickness should be two digits minimum or three digits maximum">
+ 		<label for = "Quantity">Quantity:</label>
+		 <input class="Quantity" id = "Quantity" type="text" name="Quantity" placeholder = "Quantity" required pattern=".{2,3}" required title="Please the compaction percentage should not exceed 100%">
+		
+		 <label for = "road width">Road width:</label>
+		 <input class="Croad" id = "road width" type="number" name="Rwidth" placeholder = "Road width" required pattern=".{2}" required title="Please insert correct road width!!">
+		
+		
+		
+		 <label for = "picture">Picture:</label>
+ 		 <input id = "picture" type="file" name="picture">
+		 <label for = "borrow pit name">Borrow pit:</label>
+		 <input class="Cborrow" id = "borrow pit name" type="text" name="BPname" placeholder = "borrow pit" required title="Borrow pit name goes here!!!">
+		 <label for = "shrinkage">Shrinkage:</label>
+		 <input class="Cshrinkage" id = "shrinkage" type="decimal" name="shrnk" placeholder = "factor" required pattern=".{2}" required title="Please insert shrinkage factor!!!">
+
+		 
+		 <label for = "approval">Signature:</label>
+ 		<select id = "approval" name = "approval">
+ 			<option value = "Approved">Approved</option>
+ 			<option value = "Not Approved">Not Approved</option>
+ 
+ 		</select>
+
+ 		<label for = "supervisor">Supervisor:</label>
+		 <input class="Csupervisor" id = "supervisor" type="text" name="supervisor" placeholder = "supervisor" required title="Please insert Supervisor name">
+		<section id = "commentSec">
+ 		<textarea class="Ccomment" id = "comment" cols = "19" rows = "1" name="comment" placeholder = "Insert your comment!!" ></textarea>		 
+		 </section>
+		 <button type = "submit" class = "Cinsert">submit</button>
+		
+	 </form>
+	</div>
+	<div class = "database1">
+	<form action="/findata" method="Post">
+		
+		<input class="CinsertS" name = "stationF" type = "text" id = "station" placeholder ="Insert station">
+					
+		<button type = "submit">Retrieve</button>
+	</form>
+	</div>
+	<div class = "database2">
+    <form action="/findfilltype" method="Post">
+		<select class="Cfilltype" id = "layerno." name = "filltype" placeholder = "filltype">
+			<option value="">Fill type</option>
+			<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+		 </select>			
+		<button class = "del" type = "submit" >Status</button>
+	</form>
+	</div>
+	<div class = "database3">
+	
+	<form action="/deletedata" method="Post">
+		<input name = "stationF" type = "text" id = "station" placeholder ="Insert station">
+					
+		<button class = "del" type = "submit" >Remove</button>
+	</form>
+	
+	
+	</div>
+	 <div class = "database4">
+   <form action = "/datas" method = "get">
+   <button type = "submit" style="margin-left: 10px;">X-section</button>
+	</form>
+	</div>
+   
+	<div class = "database5">
+		<form action = "/Mapfilltype" method = "post">
+			<select name="filltype" id="">
+				<option value="">Select fill type</option>
+				<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+				
+			</select>
+			<button class="" type = "submit">Map</button>
+		 </form>
+		 </div>
+	 
+	<div class = "database7">
+		<form action = "/datas" method = "get">
+		<button class="profile" type = "submit">Summary</button>
+		 </form>
+		 </div>
+	
+	
+<div class = "database">
+<div class = "map"> ROAD CROSS SECTION </div>
+<ol>
+<% comment.forEach(function(data){ %>
+<li> <P><strong>From station:</strong><%=data.stationF%>   
+	<strong>To station:    </strong><%=data.stationT%>______________
+	<strong>Fill type:</strong>    <%=data.filltype%>  
+	<strong>Borrow pit name:</strong>   <%=data.BPname%>  
+	<strong>Volume</strong>:   <%=data.Evolume%> m3</P><br><strong>Picture</strong><br><img src = "Pic/<%=data.picture%>" width = "250" height = "150" ><img class="imgRR" src = "<%=data.profile%>" width = "400" height = "150" ><br><strong>Comment:</strong>  <%=data.comment%></li>
+
+<% }) %>
+</ol>
+</div>
+<script>
+	var logtag = document.querySelector("#log")
+	var regtag = document.querySelector("#reg")
+	var homtag = document.querySelector("#hom")
+	var dattag = document.querySelector("#dat")
+	var instag = document.querySelector("#ins")
+	var abttag = document.querySelector("#abt")
+	var loogtag = document.querySelector("#loog")
+
+
+	logtag.classList.remove("selected");
+	regtag.classList.remove("selected");
+	homtag.classList.remove("selected");
+	dattag.classList.add("selected");
+	instag.classList.remove("selected");
+	abttag.classList.remove("selected");
+	loogtag.classList.remove("selected");	
+</script>
+
+<script src = "js/jquery.min.js"></script>;
+<script src = "javascripts/bootstrap.js"></script>
+</body>
+</html>

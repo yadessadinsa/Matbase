@@ -449,8 +449,13 @@ p{
   padding-left: 15px;
   padding-right: 15px;
   color: darkslategrey;
-  margin-left:210px;
+  margin-left:255px;
   margin-top:2px
+
+}
+
+.toggle{
+margin-left: 5px;
 }
 
 .dark {

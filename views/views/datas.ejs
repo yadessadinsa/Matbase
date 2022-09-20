@@ -1,0 +1,296 @@
+<% include partial.ejs %>      
+   
+
+<div id = "container">
+</div>
+ <div class = "Data1">
+
+		
+	
+	<form action="/addata" method="Post">
+<div class = data9>
+	     
+
+
+		<input class = "project" type="checkbox" id ="Robe I" value = "Prject I" name="PrjNm" onchange="PrChange(this)"/>
+		<label for = "Robe I" >Project I</label>
+		<!-- <span class="checkmark"></span> -->
+	  
+
+		<input class = "project" type="checkbox" id ="Robe II" value = 'Prject II' name="PrjNm" onchange="PrChange(this)"/>
+		<label for = "Robe II" >Project II</label>
+		<!-- <span class="checkmark"></span> -->
+	  
+		<input class = "project" type="checkbox" id ="Sofumer" value = 'Prject III' name="PrjNm" onchange="PrChange(this)"/>
+		<label for = "Sofumer">Project III</label>
+		<!-- <span class="checkmark"></span> -->
+	  </label>
+</div>
+	<script>	
+function PrChange(obj) {
+    var cbs = document.getElementsByClassName("project");
+    for (var i = 0; i < cbs.length; i++) {
+        cbs[i].checked = false;
+    }
+    obj.checked = true;
+}
+
+PrChange()
+
+var checkedValue = $('.project:checked').val();
+var checkedValue = null;
+var inputElements = document.getElementsByClassName('project');
+for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+           checkedValue = inputElements[i].value;
+           break;
+      }
+} 
+
+
+</script>
+
+        
+ 		<input id = "station" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
+ 		<input class="stationT" id = "station" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
+		 
+		<label for = "filltype">Fill type:</label>
+ 		<select id = "filltype" name="filltype" required>
+			<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+		</select>
+ 		<label for = "layerno:">Layer no.:</label>
+ 		<select id = "layerno" name = "layerno">
+			<option value = "1"> </option>
+ 			<option value = "1">First</option>
+ 			<option value = "2">Second</option>
+ 			<option value = "3">Third</option>
+ 			<option value = "4">Fourth</option>
+ 			<option value = "5">Fifth</option>
+ 		</select>
+
+ 		<label for = "thickness"> thickness:</label>
+ 		<input class="thickness" id = "thickness" type="text" name = "thickness" placeholder = "Optional" >
+ 		<label for = "Quantity">Quantity :</label>
+		<input class="Quantity" id = "Quantity" type="number" name="Quantity" placeholder = "Quantity" required pattern=".{2,3}" required title="Please the compaction percentage should not exceed 100%">
+		
+
+		
+		 <label for = "road width">Road width :</label>
+		 <input class = "road width" type="number" name="Rwidth" placeholder = "Optional" ">
+		 
+		 		
+		 <label for = "picture">Picture :</label>
+ 		 <input id = "picture" type="file" name="picture" >
+		 <label for = "borrow pit name">Borrow pit:</label>
+		 <input class="borrowPit" id = "borrow pit name" type="text" name="BPname" placeholder = "Optional">
+		 <label for = "shrinkage">Shrinkage:</label>
+		 <input class="shrinkage" id = "shrinkage" type="decimal" name="shrnk" placeholder = " Optional">
+
+		 
+		 <label for = "approval">Signature:</label>
+ 		<select id = "approval" name = "approval">
+ 			<option value ="Approved" >Approved</option>
+ 			<option value = "Not Approved">Not Approved</option>
+ 
+ 		</select>
+
+ 		<label for = "supervisor">Supervisor:</label>
+		 <input class="super" id = "supervisor" type="text" name="supervisor" placeholder = "supervisor" required title="Please insert Supervisor name">
+		 <section id="commentSec">
+		 <textarea class="comment" id = "comment" cols = "25" rows = "1" name="comment" placeholder = "Insert your comment!!" ></textarea> 		 
+		</section>
+		 <button  id = "project" type = "submit" class = "insert">submit</button>
+	 
+			 
+	 </form>
+	</div>
+<div class = "databaseA"  >
+	<form action="/findPrjdata" method="Post">
+		<label for = "Prjdata"></label>
+	<select id = "Prjdata" name="PrjNm" required>
+		<option value = "">Project</option>
+		<option value = "ATC - Robe Lot I">ATC - Robe Lot I</option>
+	   <option value = "ATC - Robe Lot II">ATC - Robe Lot II</option>
+	   <option value = "SFMR - Robe Lot II">SFMR - Robe Lot II</option>
+	</select>
+	<button type = "submit" class = "insert">Selt</button>		
+		
+	</form>
+</div>
+ 
+	<div class = "database1">
+	<form action="/findata" method="Post">
+		
+		<input name = "stationF" type = "text" class="stationF" id = "station" placeholder ="Insert station">
+					
+		<button type = "submit">Retrv</button>
+	</form>
+	</div>
+	<div class = "database2">
+    <form action="/findfilltype" method="Post">
+		<select class="filltype" id = "filltype" name = "filltype" style="margin-left: 0px;" placeholder = "filltype">
+			<option value="">Fill type</option>
+			<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+		 </select>			
+		<button class = "del" type = "submit" >Status</button>
+	</form>
+	</div>
+	<div class = "database3">
+	
+	<form action="/deletedata" method="Post">
+		<input name = "stationF" type = "text" id = "station" placeholder ="Insert station">
+					
+		<button class = "del" type = "submit" >Remove</button>
+	</form>
+	
+	
+	</div>
+	 <div class = "database4">
+   <form action = "/comment" method = "get">
+   <button type = "submit" style="margin-left: 10px;">X-section</button>
+	</form>
+	</div>
+   
+	
+	
+	<div class = "database5">
+   <form action = "/Mapfilltype" method = "post">
+	<select name="filltype" id="">
+		<option value = "Clearing & grub...../Ha/">Cl. & Grub.</option>
+			<option value = "R/B pr & unsuitable./m3/">Rb-Pr. & Remv-uns.</option>
+			<option value = "Borrow mat. to fill./m3/">Borr. to fill</option>
+			<option value = "Cut-mat. to spoil.../m3/">Cut to spoil</option>
+			<option value = "Sub-base placing..../m3./">Sub base placing</option> 
+			<option value = "Road base prod....../m3/">Rd base matr. pro.</option>
+ 			<option Value = "Prime application.../m2/">Prime coat</option>
+ 			<option Value = "Asph.agg production./m3/.">Asphalt agg. pro.</option>
+ 			<option Value = "Asphalt conc placing/m3/">Asphalt concrete</option>
+			<option Value = "Surface treatment.../m2/">SST [s/shoulder]</option>
+			<option Value = "Open drains........./Lm/">Open drains</option>
+			<option Value = "Paved ditch........./m2">Paved dich</option>
+			<option Value = "Ditch with cover..../pcs/">Ditch with cover</option>
+			<option Value = "Box and Slab culvert/pcs/">Box & Slab culv.</option>
+			<option Value = "Protection walls..../m3/">Protection walls</option>
+		
+
+		
+		
+	</select>
+   <button class="" type = "submit">Map</button>
+	</form>
+	</div>
+
+	<div class = "database7">
+		<form action = "/datas1" method = "get">
+		<button type = "submit" class="profile">Summary</button>
+		 </form>
+		 </div>
+		 
+
+	
+<div class = "database">
+	
+	
+
+ <ol>
+	<h4 class = "map">ROAD UPGRADING PROJECT <br><U>Daily Activities Quantity Execution</U> </h4>
+ <strong><U>S T A T I O N</U><br>
+<% datas.forEach(function(data){ %>
+<li>  - From:</strong> <%=data.stationF%>  <strong>To:</strong> <%=data.stationT%> ---- Date: <strong><%=data.Date%></strong><br>______________________________________ <strong><%=data.PrjNm%></strong>----<%=data.filltype%>   ----- Quantity:  <%=data.Quantity%> ----- Borrow/P Name:  <%=data.BPname%> ----- <%=data.approval%> By:  <%=data.supervisor%>   </li>
+<% }) %>
+</ol>
+
+</div>
+
+	<script>
+
+		//let volume = {
+
+			//"a":500,
+			//"b":600,
+			//"c":700,
+			//"d":800
+		//}
+
+       // let sum = 0;
+		//for (let val in volume) {
+		//	sum += volume[val]
+		//}
+
+	  // scores = Object.values(volume);
+
+		//sum = scores.reduce(function(init, val){
+		//	return (init + val)
+		//},0)
+
+	</script>
+		  
+	
+
+	
+	
+
+	
+
+
+<script>
+	
+	var logtag = document.querySelector("#log")
+	var regtag = document.querySelector("#reg")
+	var homtag = document.querySelector("#hom")
+	var dattag = document.querySelector("#dat")
+	var instag = document.querySelector("#ins")
+	var abttag = document.querySelector("#abt")
+	var loogtag = document.querySelector("#loog")
+	var projj = document.querySelector("#proj")
+	
+	
+	projj.classList.add("selected");
+	
+	logtag.classList.remove("selected");
+	regtag.classList.remove("selected");
+	homtag.classList.remove("selected");
+	dattag.classList.add("selected");
+	instag.classList.remove("selected");
+	abttag.classList.remove("selected");
+	loogtag.classList.remove("selected");
+
+	
+	
+           
+
+   
+</script>
+
+
+</body>
+
+</html>

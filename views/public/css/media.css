@@ -1,0 +1,587 @@
+/* L.Desktops */
+@media (max-width: 1200px) { 
+    .profile {
+        margin-left: 5px
+    }
+
+    .thickness{
+        width: 82px;
+    }
+}
+
+/* Tab */
+@media (max-width: 768px) { 
+    .container6 {
+        width: 55%;
+        height: 30%;
+        margin-left: 180;
+        margin-bottom: 110px;
+        padding-left: 40px;
+    }
+    
+    
+    header li {
+        float: none;
+    }
+
+    header a {
+        font-size: inherit;
+    }
+
+    .container2 {
+        width: 72%;
+    }
+    
+    #boxes1 .box1 {
+        display: flex;
+    }
+    
+    #boxes1 .box1 img {
+        margin: 20px 28px;
+        align-items: center;
+    }
+    
+    #boxes .box {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .container9 {
+        width: 50%;
+        margin: 88px auto;
+        height: auto;
+    }
+
+    .database8 {
+        width: 50%;
+        float: left;
+    }
+
+    .database11 {
+        width: 50%;
+        float: left;
+    }
+
+    input {
+        width: 119px;
+    }
+    
+    #comment1 {
+        margin-left: 0px;
+        width: 545px;
+    }
+
+    .database1 {
+        width: 30%;
+    }
+
+    .database2 {
+        width: 26%;
+    }
+    
+    .database3 {
+        width: 28%;
+    }
+    
+    .database4 {
+        width: 16%;
+    }
+
+    .database5 {
+        float: left;
+        width: 86%;
+        margin-top: -6px;
+    }
+
+    .database7 {
+        float: right;
+        /* width: 76%; */
+        margin-top: -6px;
+    }
+
+    #commentSec {
+        /* margin-right: 200px; */
+        float: left;
+        margin: 0 30px 0 0;
+    }
+
+    #picture {
+        margin-right: 43px;
+    }
+
+    #approval {
+        margin-right: 4px;
+        width: 82px;
+    }
+
+    input.road {
+        margin-right: 54px;
+    }
+
+    button.insert {
+        margin-left: 28px;
+    }
+
+    .stationTO {
+        margin-right: 5px;
+    }
+
+    #boxes .box img {
+        width: auto;
+        height: 25%;
+    }
+
+    #boxes1 .box1 img {
+        width: auto;
+        height: 10%;
+    }
+
+    .super {
+        width: 84px;
+    }
+
+    #compaction {
+        margin-right: 20px;
+    }
+
+    .container5 {
+        width: 60%;
+        height: 71%;
+        margin-left: auto;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        margin-right: auto;
+    }
+
+    input.Cthickness {
+        widows: 86px;
+    }
+
+    
+    .Rtd img {
+        width: auto; 
+    }
+
+    ol {
+        width: 101%;
+    }
+}
+
+/* M.Tabs */
+@media (max-width: 982px) { 
+    header li {
+        float: none;
+    }
+
+    header a {
+        font-size: inherit;
+    }
+    
+    #boxes1 .box1 {
+        display: flex;
+    }
+    
+    #boxes1 .box1 img {
+        margin: 20px 28px;
+        align-items: center;
+    }
+
+}
+
+/* Mobile Phone  */
+@media (max-width: 400px) {
+    .container6 {
+        width: 90%;
+        height: 55%;
+        margin-left: 20px;
+        margin-bottom: 58px;
+        padding-left: 40px;
+    }
+
+    h3 {
+        padding-left: 40px;
+    }
+
+    #username {
+        width: 100%;
+    }
+
+    #password {
+        width: 100%;
+    }
+
+    .button_1 {
+        margin-left: 123px;
+    }
+
+    header li {
+        padding: 0 4px 5px;
+    }
+
+    .container2 {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .logout a {
+        float: right;
+        margin-right: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .container3 {
+        overflow: hidden;
+        margin-bottom: -60px;
+        background: skyblue;
+        border-bottom: 5px solid black;
+    }
+
+    .head {
+        height: 100px;
+    }
+
+    #boxes .box {
+        margin-bottom: 149px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #boxes .box img {
+        height: 28%;
+        margin-bottom: 115px;
+        margin-top: 32px;
+    }
+
+    #boxes1 .box1 img {    
+        margin: 33px 9px;
+        height: 44%;
+    }
+
+    #boxes1 .box1 {
+        height: 20%;
+    }
+
+    .Data1 {
+        margin-top: 24px;
+        padding: 11px 2px 0px 5px;
+    }
+
+    #comment1 {
+        width: 282px;
+    }
+
+    .database8 {
+        width: 100%;
+    }
+
+    .database11 {
+        width: 100%;
+        margin-top: -6px;
+    }
+
+    .container9 {
+        width: 97%;
+        margin: 43px auto;
+        line-height: 32px;
+    }
+
+    .stationT {
+        margin-right: 56px;
+    }
+
+    .compaction {
+        width: 82px;
+    }
+
+    input.road {
+        margin-right: 1px;
+        width: 100px;
+    }
+
+    #picture {
+        width: 90px;
+        margin-right: 0px;
+    }
+
+    .borrowPit {
+        width: 73px;
+    }
+
+    #approval {
+        margin-right: 1px;
+    }
+
+    .super {
+        width: 84px;
+    }
+
+    button.insert {
+        margin-left: -35px;
+    }
+
+    .comment {
+        width: 247px;
+        margin-right: 20px;
+    }
+
+    .database1 {
+        width: 56%;
+    }
+
+    .stationF {
+        width: 92px;
+    }
+
+    .filltype {
+        width: 75px;
+    }
+
+    .database2 {
+        width: 44%;
+    }
+
+    .database3 {
+        width: 60%;
+    }
+
+    .database4 {
+        width: 40%;
+    }
+
+    .profile {
+        margin-left: -83px;
+        width: 104px;
+    }
+
+    .map {
+        width: 92px;
+    }
+
+    .container5 {
+        width: 90%;
+        height: 71%;
+        margin-left: auto;
+        margin-top: 38px;
+        margin-bottom: 5px;
+        padding-left: 15px;
+    }
+
+    #name {
+        width: 140%;
+    }
+
+    #email {
+        width: 140%;
+    }
+
+    .username {
+        width: 140%;
+    }
+
+    .password {
+        width: 140%;
+    }
+
+    #password2 {
+        width: 140%;
+    }
+
+    .reg {
+        margin-left: 166px;
+    }
+
+    .h33 {
+        margin-top: -9px;
+    }
+
+    #stationF {
+        width: 105px;
+    }
+
+    .thickness{
+        width: 72px;
+    }
+
+    .shrinkage {
+        width: 108px;
+    }
+
+    #rad1 {
+        width: 18px;
+        margin-right: 10px;
+    }
+
+    #rad2 {
+        width: 18px;
+        margin: 0 10px 0 20px;
+    }
+
+    .xs-st {
+        width: 100px;
+    }
+
+    #stationA {
+        width: 118px;
+    }
+
+    .Cstation{
+        margin-right: 50px;
+    }
+
+    .Cthickness {
+        width: 70px;
+    }
+
+    .Ccompaction {
+        width: 84px;
+    }
+
+    .Croad {
+        width: 100px;
+    }
+
+    .Cborrow {
+        width: 73px;
+    }
+
+    .Cshrinkage {
+        width: 114px;
+    }
+
+    .Csupervisor {
+        width: 100px;
+    }
+
+    .Ccomment {
+        width: 234px;
+    }
+
+    .Cinsert {
+        margin-left: -10px;
+    }
+
+    .CinsertS {
+        width: 95px;
+    }
+
+    .Cfilltype {
+        width: 76px;
+    }
+
+    .Rstation {
+        margin-right: 50px;
+    }
+
+    .Rthickness {
+        width: 70px;
+    }
+
+    .Rcompaction {
+        width: 84px;
+    }
+
+    .Rroad {
+        width: 90px;
+    }
+
+    .Rpit {
+        width: 73px;
+    }
+
+    .Rshrinkage {
+        width: 114px;
+    }
+
+    .Rsupervisor {
+        width: 100px;
+    }
+
+    .Rcomment {
+        width: 233px;
+    }
+
+    .Rinsert {
+        margin-left: -14px;
+    }
+
+    .RstationI {
+        width: 95px;
+    }
+
+    .Rfilltype {
+        width: 76px;
+    }
+
+    .Pstation {
+        margin-right: 50px;
+    }
+
+    .Pthickness {
+        width: 71px;
+    }
+
+    .Pcompation {
+        width: 83px;
+    }
+
+    .Proad {
+        width: 90px;
+    }
+
+    .Pborrow{
+        width: 72px;
+    }
+
+    .Pshrinkage {
+        width: 115px;
+    }
+
+    .Psupervisor {
+        width: 100px;
+    }
+
+    .Pcomment {
+        width: 229px;
+    }
+
+    .Pinsert {
+        margin-left: -10px;
+    }
+
+    .PstationF {
+        width: 95px;
+    }
+
+    .Playerno {
+        width: 76px;
+    }
+
+    th #form {
+        width: auto;
+    }
+
+    th img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 43.5px;
+    }
+
+    #box3 img {
+        width: 126px;
+        height: 60px;
+        /* margin-left: -22px; */
+    }
+
+    .Rtd img {
+        width: 246px;
+        height: 200px; 
+    }
+
+    .imgRR {
+        width: 278px;
+        height: 150px;
+    }
+}

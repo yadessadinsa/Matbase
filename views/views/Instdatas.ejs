@@ -1,0 +1,143 @@
+
+ 
+         <% include partial.ejs %>
+         <div id = "container">
+        </div>
+         <div class = "Data1">
+        
+             <form action="/addInstdatas" method="Post">
+                <label for = "Prname">Project name:</label>
+                <select id = "" name="Prname" required>
+                   <option value = "RUKUNGIRI-KIHIHI-ISHASHA/KANUNGU">Rukungiri</option> 
+                   <option value = ""></option>
+                    <option Value = ""></option>
+                    
+                </select>
+                <label for = "title">Title:</label>
+                 <input id = "title" type="text" name = "title" placeholder = "title" >
+                 <label for = "formname">Form No.:</label>
+                 <input id = "formname" type="text" name = "formname" placeholder = "Form No." >
+
+                 <label for = "station">From:</label>
+                <input id = "stationF" type="text" name="stationF" placeholder = "From station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum">
+                <label class="stationTO" for = "station">To:</label>
+                <input id = "stationA" type="text" name="stationT" placeholder = "To station" required pattern=".{2,6}" required title="Please the length should be two digits minimum or six digits maximum"> 
+                 
+        
+                                  
+                         
+                 <label for = "signiture">Sign here:</label>
+                  <input id = "" type="file" name="sign" required >
+                 
+                 
+                 
+                 <label for = "engineer">Engineer:</label>
+                 <input id = "engineer" type="text" name="engname" placeholder = "Engineer" required title="Please insert Supervisor name"><br>
+                 <!-- <section id="commentSec"> -->
+                 <textarea id = "comment1" cols = "104" rows = "2" name="instr" placeholder = "Forword your Eng. Instruction!!" ></textarea> 		 
+                <!-- </section> -->
+                <button type="submit">submit</button>
+                </form>
+                </div>
+                <div class = "database8"> 
+                <form  action="/findInstdatas" method="post">
+                
+                    <input name = "stationF" type = "text" class = "" placeholder ="From station">
+                    <input name = "stationT" type = "text" class = "xs-st" placeholder ="To station">
+                                
+                    <button class = "" type = "submit">Retrieve</button>
+                </form>
+            </div>
+            <div class = "database11">
+                   <form action="/deleteInstdatas" method="post">
+                
+                   <input name = "formname" type = "text" class = "" placeholder ="Insert Form No.">
+                                                   
+                      <button class = "" type = "submit">Remove</button>
+                   </form>
+            </div>     
+                    
+                
+                
+            </div>
+            
+            
+            
+            
+    <div class = "database">
+        <% Instdatas.forEach(function(data){ %>
+            _____________________________________________________________________________________________________________________________
+        
+            <table Id = "tab" border="">
+                <tr>
+                    <td>
+                        <img src = "/pic/006.jpg" width = "170" height ="170">
+                    </td>
+                    <td>
+                            <div class = "Enginst1"><h1><b>SMEC ENGINEERING CONSULTANT</b></h1></div><br>
+                            <div class = "Enginst2"><b>PROJECT:</b><%=data.Prname%></div>
+    
+                    </td>
+                      <td>
+                          <div id = "form">Form no:<%=data.formname%>___Date:<%=data.date%></div>
+                      </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    <textarea name="" class="Enginst8" cols="49" rows="1">ENGINEER'S INSTRUCTION</textarea><br>
+                        
+                    </td>
+    
+                    <td>
+                      From:<%=data.stationF%>__________To:<%=data.stationT%>
+    
+                    </td>
+    
+                    </table  id = "tab">
+                    <table id = "tab" border = "1">
+                        <tr>
+                        <td class ="Enginst4"><B>FROM:CONSULTANT REPRESENTATIVE</B></td>
+                        </tr>
+                      <tr class = "tab1">
+                        
+                        <td><textarea name="" class="Enginst3" cols="124" rows="30"><%=data.instr%></textarea></td>
+    
+                      </tr>
+    
+                 </table>  
+                 <table border = "1">
+                     <td class = "">
+                        <td><textarea name="" class="Enginst5" cols="39" rows="2">Signed By:<%=data.engname%></textarea></td>
+                     </td>
+                    <td class = "">
+                        <td><textarea name="" class="Enginst6" cols="38" rows="2">Position:Pavement/Materials Engineer</textarea></td>
+                        
+                    </td>
+
+                     </td>
+                     <td class = "">
+                            <td><textarea name="" class="Enginst6" cols="7" rows="2">Signiture:</textarea></td>
+                            
+                        </td>
+                     <td class="">
+                         <label for id ="box3">
+                        <td><div id = "box3"><img src = "/Pic/<%=data.sign%>" length = "" width = ""></div></td>
+                        <!-- <td><textarea name="" class="Enginst6" cols="38" rows="2">Signiture:</textarea></td> -->
+                         </label>                                                                  
+                         
+                     </td>
+
+                 </table> 
+                 <%})%>
+        </div>
+    
+    
+    
+    
+    <script src = "js/jquery.min.js"></script>;
+    <script src = "javascripts/bootstrap.js"></script>
+    </body>
+    </html>
+
